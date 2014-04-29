@@ -102,7 +102,7 @@
       <file leaf-file-name="WebsocketTransport.as" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/io/socket/flash/WebsocketTransport.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="28" selection-start="3845" selection-end="3845" vertical-scroll-proportion="0.59213483">
+            <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.5743243">
               <folding>
                 <element signature="e#27#68#0" expanded="true" />
               </folding>
@@ -684,7 +684,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/socket/flash/WebsocketTransport.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="28" selection-start="3845" selection-end="3845" vertical-scroll-proportion="0.59213483">
+        <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.5743243">
           <folding>
             <element signature="e#27#68#0" expanded="true" />
           </folding>
