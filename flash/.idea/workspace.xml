@@ -70,10 +70,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="socketIOClient.as" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="socketIOClient.as" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/screemo/socketIOClient.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="88" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
+            <state line="65" column="51" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.63307774">
               <folding>
                 <element signature="e#174#205#0" expanded="true" />
               </folding>
@@ -99,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsocketTransport.as" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WebsocketTransport.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/io/socket/flash/WebsocketTransport.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.5743243">
+            <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-20.4">
               <folding>
                 <element signature="e#27#68#0" expanded="true" />
               </folding>
@@ -159,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/com/screemo/scoketIOClient.as" />
         <option value="$PROJECT_DIR$/src/io/socket/flash/XhrPollingTransport.as" />
         <option value="$PROJECT_DIR$/src/io/socket/flash/BaseSocketIOTransport.as" />
-        <option value="$PROJECT_DIR$/src/com/screemo/socketIOClient.as" />
         <option value="$PROJECT_DIR$/src/io/socket/flash/WebsocketTransport.as" />
+        <option value="$PROJECT_DIR$/src/com/screemo/socketIOClient.as" />
       </list>
     </option>
   </component>
@@ -652,15 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/screemo/socketIOClient.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="88" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#174#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/io/socket/flash/ISocketIOTransportFactory.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
@@ -684,9 +675,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/io/socket/flash/WebsocketTransport.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="0.5743243">
+        <state line="129" column="102" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-20.4">
           <folding>
             <element signature="e#27#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/screemo/socketIOClient.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="51" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.63307774">
+          <folding>
+            <element signature="e#174#205#0" expanded="true" />
           </folding>
         </state>
       </provider>
