@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<div id="data">
+
+<ul>
+<% for (var i = 0; i < connectedClients.length; i++ ) { %>
+    <!-- <% for (var key in connectedClients[i]) { %>
+        <li><%= key %></li>
+    <% } %> -->
+
+    <li><%= connectedClients[i].id %></li>
+
+<% }%>
+</ul>
+</div>
+</body>
+</html>

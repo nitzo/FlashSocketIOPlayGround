@@ -10,7 +10,7 @@
 <input type="text" id="message"><button id="send">Send!</button>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://socketio.screemo.net');
+  var socket = io.connect('http://localhost:<%=port%>');
 
 //  setInterval(function(){
 //     var data = (new Date()).getTime();

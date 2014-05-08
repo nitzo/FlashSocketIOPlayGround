@@ -33,7 +33,7 @@ public class socketIOClient extends MovieClip {
 
 
     public function connectToSocket(){
-        _ioSocket = _socketIOTransportFactory.createSocketIOTransport(WebsocketTransport.TRANSPORT_TYPE, "socketio.screemo.net/socket.io", this);
+        _ioSocket = _socketIOTransportFactory.createSocketIOTransport(WebsocketTransport.TRANSPORT_TYPE, "localhost:3000/socket.io", this);
         _ioSocket.addEventListener(SocketIOEvent.CONNECT, onSocketConnected);
         _ioSocket.addEventListener(SocketIOEvent.DISCONNECT, onSocketDisconnected);
         _ioSocket.addEventListener(SocketIOEvent.MESSAGE, onSocketMessage);
