@@ -42,9 +42,13 @@ io.set('store', new RedisStore({
 
 io.sockets.on('connection', function (socket) {
   socket.set('port', port);
+
+  socket.join('room');
+
   socket.on('data', function (data) {
     console.log('DATA Recieved! '  + data);
-      socket.broadcast.emit('data', data);
+      socket.broadcast.to('room').emit('data', data);
+      socket.emit('data', 'OK!');
   });
 });
 
