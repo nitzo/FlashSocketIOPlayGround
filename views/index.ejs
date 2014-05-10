@@ -4,10 +4,15 @@
 
 </head>
 <body>
-<div id="data">
+Incoming Data:
+<span id="imcomingData">
 
-</div>
-<input type="text" id="message"><button id="send">Send!</button>
+</span><br>
+Message:<input type="text" id="message"><br>
+To (SocketID): <input type="text" id="socketid"><br>
+<button id="broadcast">BroadCast!</button> <button id="send">Send!</button><br>
+Mysocketid: <span id="mysocketid">
+</span>
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io.connect('http://localhost:<%=port%>');
@@ -18,13 +23,22 @@
 //     document.getElementById('data').innerHTML = data;
 //  },5000);
 
-    document.getElementById('send').onclick = function(){
-        socket.emit('data', document.getElementById('message').value);
+    document.getElementById('broadcast').onclick = function(){
+        socket.emit('broadcast', { message : document.getElementById('message').value });
     }
 
-    socket.on('data', function(data){
-        console.log('HURRAY!');
-        document.getElementById('data').innerHTML = data;
+    document.getElementById('send').onclick = function(){
+        socket.emit('message', { message : document.getElementById('message').value, socketid : document.getElementById('socketid').value });
+    }
+
+    socket.on('connect', function(){
+        document.getElementById('mysocketid').innerHTML = socket.socket.sessionid;
+    })
+
+
+    socket.on('message', function(data){
+        console.log('Got a message!');
+        document.getElementById('imcomingData').innerHTML = data;
     })
 </script>
 
