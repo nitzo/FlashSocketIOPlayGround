@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+Incoming Data:
+<span id="imcomingData">
+
+</span><br>
+Message:<input type="text" id="message"><br>
+<button id="screenReady">Screen Ready!</button>
+<button id="sendMessage">Send Message to Client!</button>
+<br>
+Mysocketid: <span id="mysocketid">
+</span>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:<%=port%>');
+
+    //  setInterval(function(){
+    //     var data = (new Date()).getTime();
+    //     socket.emit('data', data);
+    //     document.getElementById('data').innerHTML = data;
+    //  },5000);
+
+    document.getElementById('screenReady').onclick = function () {
+        socket.emit('screenReady');
+    }
+
+    document.getElementById('sendMessage').onclick = function () {
+        socket.emit('message', { message: document.getElementById('message').value });
+    }
+
+    socket.on('connect', function () {
+        document.getElementById('mysocketid').innerHTML = socket.socket.sessionid;
+    });
+
+    socket.on('connectScreen', function(clientid){
+       document.getElementById('clientid').innerHTML = clientid;
+    });
+
+
+    socket.on('message', function (data) {
+        console.log('Got a message!');
+        document.getElementById('imcomingData').innerHTML = JSON.stringify(data);
+    })
+</script>
+
+
+</body>
+</html>

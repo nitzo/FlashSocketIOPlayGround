@@ -10,38 +10,45 @@ Incoming Data:
 </span><br>
 Message:<input type="text" id="message"><br>
 To (SocketID): <input type="text" id="socketid"><br>
-<button id="broadcast">BroadCast!</button> <button id="send">Send!</button><br>
+<button id="broadcast">BroadCast!</button>
+<button id="sendRoom">Send To Room!</button>
+<button id="sendSocket">Send To Socket!</button>
+<br>
 Mysocketid: <span id="mysocketid">
 </span>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://localhost:<%=port%>');
+    var socket = io.connect('http://localhost:<%=port%>');
 
-//  setInterval(function(){
-//     var data = (new Date()).getTime();
-//     socket.emit('data', data);
-//     document.getElementById('data').innerHTML = data;
-//  },5000);
+    //  setInterval(function(){
+    //     var data = (new Date()).getTime();
+    //     socket.emit('data', data);
+    //     document.getElementById('data').innerHTML = data;
+    //  },5000);
 
-    document.getElementById('broadcast').onclick = function(){
-        socket.emit('broadcast', { message : document.getElementById('message').value });
+    document.getElementById('broadcast').onclick = function () {
+        socket.emit('broadcast', { message: document.getElementById('message').value });
     }
 
-    document.getElementById('send').onclick = function(){
-        socket.emit('message', { message : document.getElementById('message').value, socketid : document.getElementById('socketid').value });
+    document.getElementById('sendRoom').onclick = function () {
+        socket.emit('message', { message: document.getElementById('message').value, roomid: document.getElementById('socketid').value });
     }
 
-    socket.on('connect', function(){
+    document.getElementById('sendSocket').onclick = function () {
+        socket.emit('message', { message: document.getElementById('message').value, socketid: document.getElementById('socketid').value });
+    }
+
+
+    socket.on('connect', function () {
         document.getElementById('mysocketid').innerHTML = socket.socket.sessionid;
     })
 
 
-    socket.on('message', function(data){
+    socket.on('message', function (data) {
         console.log('Got a message!');
         document.getElementById('imcomingData').innerHTML = data;
     })
 </script>
-
 
 
 </body>

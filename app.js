@@ -14,6 +14,11 @@ app.get('/', function (req, res) {
     //res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/dummyScreen', function (req, res) {
+    res.render('dummyScreen.ejs', { port: 3000});
+    //res.sendfile(__dirname + '/index.html');
+});
+
 
 app.get('/sockets', function (req, res) {
     var data = {};
@@ -54,9 +59,13 @@ io.sockets.on('connection', function (socket) {
     socket.on('message', function (data) {
         console.log('Message Recieved! ' + JSON.stringify(data));
 
-        if (data.socketid){
-            socket.broadcast.to(data.socketid).emit('message', data.message + ' from ' + socket.id);
-            socket.emit('message', 'Message ' + data.message + ' was sent to ' + data.socketid);
+        if (data.roomid){
+//            socket.broadcast.to(data.roomid).emit('message', data.message + ' from ' + socket.id);
+//            socket.emit('message', 'Message ' + data.message + ' was sent to room ' + data.roomid);
+        }
+        else if (data.socketid){
+            io.sockets.socket(data.socketid).emit('message', data.message + ' from ' + socket.id);
+            socket.emit('message', 'Message ' + data.message + ' was sent to socket ' + data.socketid);
         }
         else {
             socket.emit('message', 'No socket specified!! ');
